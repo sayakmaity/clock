@@ -10,6 +10,7 @@ import signal
 # set seed
 random.seed(0)
 
+
 class Machine:
     def __init__(self, id, clock_rate):
         self.id = id
@@ -34,14 +35,14 @@ class Machine:
     def send_message(self, message, recipient_id):
         """
         > The function sends a message to a recipient process, and increments the logical clock
-        
+
         :param message: The message to be sent
         :param recipient_id: The id of the process to send the message to
         """
         self.logical_clock += 1
         recipient = self.connections[recipient_id]
         recipient = self.connections[recipient_id]
-        recipient.message_queue.put((message, self.id, self.logical_clock))        
+        recipient.message_queue.put((message, self.id, self.logical_clock))
         recipient.message_queue_count.value += 1
 
     def handle_random_event(self):
@@ -71,7 +72,7 @@ class Machine:
     def log(self, message):
         """
         It writes a message to a log file and a csv file
-        
+
         :param message: The message to be logged
         """
         global_time = time.time()
@@ -118,15 +119,16 @@ class Machine:
 
             time.sleep(1 / self.clock_rate)
 
+
 if __name__ == "__main__":
-   # Deleting all the log and csv files in the directory.
+    # Deleting all the log and csv files in the directory.
     for f in glob.glob("*.log"):
         os.remove(f)
     for f in glob.glob("*.csv"):
         os.remove(f)
 
     machines = []
-    fixed_freq = [4,5,6]
+    fixed_freq = [4, 5, 6]
     # Creating 3 machines with clock rates 1, 3, and 6.
     for i in range(3):
         # set clock_rate to be a random number between 1 and 6 inclusive
@@ -136,7 +138,7 @@ if __name__ == "__main__":
         machine.log(f"Initialized machine {i} with clock rate {clock_rate}")
         machines.append(machine)
 
-   # Connecting all the machines to each other.
+    # Connecting all the machines to each other.
     for machine in machines:
         machine.connect_all(machines)
 
