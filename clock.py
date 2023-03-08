@@ -41,7 +41,6 @@ class Machine:
         """
         self.logical_clock += 1
         recipient = self.connections[recipient_id]
-        recipient = self.connections[recipient_id]
         recipient.message_queue.put((message, self.id, self.logical_clock))
         recipient.message_queue_count.value += 1
 
