@@ -33,6 +33,7 @@ In conclusion, the main.py file simulates the behavior of multiple machines exch
 * When there is a smaller probability of the event being internal, the average queue length varies more between machines and jump sizes stay similar to the original
 
 [Data Sheet](https://docs.google.com/spreadsheets/d/1tAanilzdFsolDjkegcVqjUamSsm829LlVw85UvUrcJs/edit#gid=898764490)
+On the following graphs, the x-axis is system time from python's ```time.time()``` and the y axis is the ratio between the delta in logical clock time and the delta in the global clock time at each time/log step
 
 ### System Clock 1: rate 6
 ![Machine 1: rate 6](Images/1.png)
