@@ -34,5 +34,5 @@ In conclusion, the main.py file simulates the behavior of multiple machines exch
 
 [Data Sheet](https://docs.google.com/spreadsheets/d/1tAanilzdFsolDjkegcVqjUamSsm829LlVw85UvUrcJs/edit#gid=898764490)
 
-![System Clock 1: rate 6](Images/1.png)
-![System Clock 2: rate 3](Images/2.png)
+[System Clock 1: rate 6](Images/1.png)
+[System Clock 2: rate 3](Images/2.png)
